@@ -1,0 +1,32 @@
+.Home {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 50px;
+
+	.subHome {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		text-align: center;
+
+	}
+
+	.title1 {
+		font-size: 50px;
+	}
+
+	.linkHome {
+		border: 1px solid rgba(255,255,255, .4);
+		padding: 20px;
+		border-radius: 20px;
+		text-decoration: none;
+		color: #ffffffff;
+		font-size: 1.4rem;
+		transition: border-color .5s ease-in-out;
+		&:hover {
+			border-color: aqua;
+		}
+	}
+
+}
