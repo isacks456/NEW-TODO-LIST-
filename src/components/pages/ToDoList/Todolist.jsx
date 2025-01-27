@@ -45,7 +45,7 @@ export const Todolist = () => {
 						<div className={styles.subBlock2}>
 							<li key={index} className={styles.subBlock3}>{el}</li>
 							<div className={styles.subBlock4}>
-								<button onClick={() => removeButton(index)}>X</button>
+								<button onClick={() => removeButton(index)} className={styles.removeButton}>X</button>
 							</div>
 						</div>
 					</div>
