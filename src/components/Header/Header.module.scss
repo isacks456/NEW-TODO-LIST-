@@ -1,46 +1,123 @@
 .Header {
-	display: flex;
-	justify-content: space-between;
-	padding: 20px 100px;
-	border-bottom: 2px solid rgba(255,255,255, .4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 100px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
 
-	.subHeader {
-		font-size: 1.4rem;
-		font-weight: bold;
-	}
+  .subHeader {
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
 
-	.spanHeader {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 40px;
+  .spanHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 
-		.linkHeader {
-			text-decoration: none;
-			color: #ffffffff;
-			font-size: 1.4rem;
-			position: relative;
-			&::after {
-				content: '';
-				position: absolute;
-				left: 0;
-				bottom: 0px;
+    .spanHeader1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .linkHeader {
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 1.4rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      &:hover::after {
+        animation: linkHover 0.5s forwards;
+      }
+
+      @keyframes linkHover {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .burgerIcon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ffffff;
+  }
+
+
+  @media (max-width: 750px) {
+    padding: 20px;
+
+    .burgerIcon {
+      display: block;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 10px;
+
+			.spanHeader2 {
 				height: 2px;
-				background-color: rgba(255,255,255, .4);
+				width: 30px;
+				background-color: #ffffff;
+				position: relative;
+				transition: all .3s ease;
+			
 			}
-			&:hover::after {
-				animation: linkHover .5s forwards;
-			}
-			@keyframes linkHover {
-				from {
-					width: 0%;
-				}
-				to {
-					width: 100%;
-				}
-			}
-		}
 
-	}
+			.spanHeader2.open1 {
+				&:nth-child(1) {
+					transform: rotate(45deg);
+					top: 4px;
+				}
+				&:nth-child(2) {
+					display: none;
+				}
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+					top: -8px;
+				}
+			}
 
+    }
+
+
+    .spanHeader {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 40px;
+      right: 70px;
+      background: rgba(0,0,0,.8);
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(3, 2, 2, 0.4);
+			z-index: 10;
+    }
+
+    .spanHeader.open {
+      display: flex;
+    }
+
+    .spanHeader1 {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
 }
