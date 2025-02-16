@@ -51,3 +51,15 @@
 	}
 
 }
+
+@media (max-width:650px) {
+	.subAboutUs {
+		font-size: 1.4rem !important;
+		text-align: center;
+	}
+
+	.linkAboutUs {
+		max-width: 200px;
+	}
+
+}

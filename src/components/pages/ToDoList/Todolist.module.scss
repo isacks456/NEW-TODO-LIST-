@@ -115,3 +115,37 @@
 	}
 
 }
+
+@media(max-width:700px) {
+	.Todolist1 {
+		max-width: 300px;
+	}
+}
+
+@media (max-width:450px) {
+	.Todolist1 {
+		max-width: 200px;
+	}
+
+	.inputTodolist {
+		max-width: 70%;
+	}
+
+	.buttonTodolist {
+		max-width: 60%;
+	}
+}
+
+@media (max-width:400px) {
+	.Todolist1 {
+		max-width: 170px;
+	}
+
+	.inputTodolist {
+		max-width: 50%;
+	}
+
+	.buttonTodolist {
+		max-width: 50%;
+	}
+}
